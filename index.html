@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Love ❤️</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    background: linear-gradient(to bottom, #ffe6f2, #ffffff);
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+/* Floating hearts */
+.heart {
+    position: fixed;
+    bottom: -20px;
+    font-size: 20px;
+    animation: floatUp 6s linear infinite;
+    opacity: 0.7;
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(0); opacity: 0.8; }
+    100% { transform: translateY(-110vh); opacity: 0; }
+}
+
+/* Intro */
+.intro {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 30px;
+}
+
+.intro h1 {
+    font-size: 34px;
+    color: #c2185b;
+}
+
+.intro p {
+    font-size: 18px;
+    color: #444;
+    max-width: 500px;
+    line-height: 1.6;
+}
+
+button {
+    margin-top: 25px;
+    padding: 12px 24px;
+    font-size: 16px;
+    border: none;
+    border-radius: 30px;
+    background: #e91e63;
+    color: white;
+    cursor: pointer;
+}
+
+/* Gallery */
+.gallery {
+    padding: 20px 10px 60px;
+}
+
+.card {
+    background: white;
+    border-radius: 18px;
+    margin: 15px auto;
+    max-width: 420px;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+}
+
+.note {
+    padding: 15px;
+    font-size: 16px;
+    background: #fff0f5;
+    color: #333;
+    text-align: center;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Floating hearts container -->
+<div id="hearts"></div>
+
+<!-- Intro -->
+<section class="intro">
+    <h1>Happy Valentine Week ❤️</h1>
+    <p>
+        Every memory with you is my favorite chapter.
+        This space holds our moments,
+        our laughter, and the love we grow every day.
+        Here’s to us — always.
+    </p>
+    <button onclick="scrollToGallery()">See Our Memories ↓</button>
+</section>
+
+<!-- Gallery -->
+<section id="gallery" class="gallery">
+
+<div class="card">
+    <img src="img1.jpeg" alt="Rose Day">
+    <div class="note">🌹 Rose Day — The start of our beautiful week</div>
+</div>
+
+<div class="card">
+    <img src="propose.jpeg" alt="Propose Day">
+    <div class="note">💍 Propose Day — I’d choose you every lifetime</div>
+</div>
+
+<div class="card">
+    <img src="chocolate.jpeg" alt="Chocolate Day">
+    <div class="note">🍫 Chocolate Day — Sweet like your smile</div>
+</div>
+
+<div class="card">
+    <img src="teddy.jpeg" alt="Teddy Day">
+    <div class="note">🧸 Teddy Day — Soft moments with you</div>
+</div>
+
+<div class="card">
+    <img src="promise.jpeg" alt="Promise Day">
+    <div class="note">🤍 Promise Day — Forever means us</div>
+</div>
+
+<div class="card">
+    <img src="hug.jpeg" alt="Hug Day">
+    <div class="note">🤗 Hug Day — My safest place</div>
+</div>
+
+<div class="card">
+    <img src="kiss.jpeg" alt="Kiss Day">
+    <div class="note">💋 Kiss Day — Magic in every moment</div>
+</div>
+
+<div class="card">
+    <img src="anniversary.jpeg" alt="2 Month Anniversary">
+    <div class="note">🎉 2 Month Anniversary — Our journey just began ❤️</div>
+</div>
+
+</section>
+
+<script>
+function scrollToGallery() {
+    document.getElementById("gallery").scrollIntoView();
+}
+
+/* Floating hearts generator */
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (15 + Math.random() * 25) + "px";
+    heart.style.animationDuration = (4 + Math.random() * 3) + "s";
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 6000);
+}
+
+setInterval(createHeart, 400);
+</script>
+
+</body>
+</html>
